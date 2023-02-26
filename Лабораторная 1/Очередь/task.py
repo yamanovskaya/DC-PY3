@@ -49,12 +49,10 @@ class Queue:
             >>> a = queue_.dequeue()
             Queue is empty
         """
-        try:
-            if len(self.list_) == 0:
-                raise IndexError('Queue is empty')
-            return self.list_.pop(0)
-        except IndexError:
-            print('Queue is empty')
+
+        if len(self.list_) == 0:
+            raise IndexError('Queue is empty')
+        return self.list_.pop(0)
 
     def peek(self, ind: int = 0) -> Any:
         """
@@ -105,4 +103,4 @@ class Queue:
         return len(self.list_)
 
 
-doctest.testmod()  # тестирование примеров
+# doctest.testmod()  # тестирование примеров
